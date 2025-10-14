@@ -6,7 +6,9 @@ const Root = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className='flex justify-center items-center'>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };

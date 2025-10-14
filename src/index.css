@@ -2,8 +2,13 @@
 @plugin "daisyui";
 
 
+
 .menuItems.active {
   text-decoration: underline;
   color: blue;
   font-weight: 600;
+}
+
+input{
+  border: 2px solid gray;
 }

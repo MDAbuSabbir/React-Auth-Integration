@@ -5,8 +5,8 @@ import  '../index.css'
 const Navbar = () => {
     const links = <>
     <li><NavLink className="menuItems" to={"/"} > Home</NavLink></li> 
-    <li><NavLink  className="menuItems" to={"/login"} > Login</NavLink></li> 
     <li><NavLink className="menuItems" to={"/register"}>Register</NavLink></li> 
+    <li><NavLink  className="menuItems" to={"/login"} > Login</NavLink></li> 
     </>
        
     return (
