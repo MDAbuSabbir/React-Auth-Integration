@@ -5,6 +5,7 @@ import { auth } from '../Firebase Configaration/Firebase.config';
 
 const AuthProvider = ({children}) => {
     const [user , setUser] = useState(null)
+    const [loading , setLoading] = useState(true)
     const createUser = (ab, cd)=>{
         return createUserWithEmailAndPassword(auth, ab, cd)
     }
@@ -18,6 +19,7 @@ const AuthProvider = ({children}) => {
     }
 
     const authInfo = {
+        loading,
         user,
         createUser,
         singInUser,
@@ -29,6 +31,7 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth , (currentUser)=>{
             // console.log(currentUser.email)
             setUser(currentUser)
+            setLoading(false)
         })
         return () =>{
             unsubscribe();
