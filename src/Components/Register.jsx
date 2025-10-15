@@ -1,23 +1,40 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import React from "react";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+import React, { use } from "react";
 import { Link } from "react-router";
-import { auth } from "../Firebase Configaration/Firebase.config";
+import { AuthorizationContext } from "../Contexts/AuthContext";
+// import { auth } from "../Firebase Configaration/Firebase.config";
 
 const Register = () => {
+  const {createUser} = use(AuthorizationContext)
+  
     const handleRegister = (e) =>{
-        e.preventDefault()
-        const name = e.target.name.value
-        const email = e.target.email.value
-        const password = e.target.password.value
-        console.log(email, password,name)
-        createUserWithEmailAndPassword(auth,email,password)
-        .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error =>{
-            console.log(error.message)
-        })
+      e.preventDefault()
+      const email = e.target.email.value
+      const password = e.target.password.value
+      
+      createUser(email, password)
+      .then(result =>{
+        console.log(result.user)
+      })
+      .catch(error =>{
+        console.log(error.message)
+      })
+      
     }
+    // const handleRegister = (e) =>{
+    //     e.preventDefault()
+    //     const name = e.target.name.value
+    //     const email = e.target.email.value
+    //     const password = e.target.password.value
+    //     console.log(email, password,name)
+    //     createUserWithEmailAndPassword(auth,email,password)
+    //     .then(result =>{
+    //         console.log(result.user)
+    //     })
+    //     .catch(error =>{
+    //         console.log(error.message)
+    //     })
+    // }
   return (
     <div className="hero-content flex-col lg:flex-row-reverse">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
