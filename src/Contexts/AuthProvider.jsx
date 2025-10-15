@@ -7,14 +7,17 @@ const AuthProvider = ({children}) => {
     const [user , setUser] = useState(null)
     const [loading , setLoading] = useState(true)
     const createUser = (ab, cd)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, ab, cd)
     }
 
     const singInUser = (ab , cd)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, ab , cd)
     }
 
     const signOutUser = () =>{
+        setLoading(true)
        return signOut(auth)
     }
 

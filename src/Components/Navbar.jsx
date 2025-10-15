@@ -18,6 +18,7 @@ const Navbar = () => {
     <li><NavLink className="menuItems" to={"/"} > Home</NavLink></li> 
     <li><NavLink className="menuItems" to={"/register"}>Register</NavLink></li> 
     <li><NavLink  className="menuItems" to={"/login"} > Login</NavLink></li> 
+    <li><NavLink  className="menuItems" to={"/dashboard"} > Dashboard</NavLink></li> 
     {
       user && <>
       <li><NavLink className="menuItems" to={"/orders"}>Orders</NavLink></li> 
